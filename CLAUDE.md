@@ -142,7 +142,7 @@ SEO infrastructure was implemented 2026-04-09. Before making any changes, read t
 
 ## Repo
 
-GitHub repo: `grouchyseafowl/grouchyseafowl.github.io`
+GitHub repo: `disabledbydesign/grouchyseafowl.github.io`
 Deploy: GitHub Actions on push to main (`.github/workflows/deploy.yml`)
 
 ## graphify

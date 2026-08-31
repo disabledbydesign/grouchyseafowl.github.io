@@ -8,8 +8,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 >
   <div class="page-header">
     <h1>Teaching</h1>
-    <p class="subtitle">Courses in anthropology, ethnic studies, and Native American studies at a Hispanic-Serving Institution.</p>
+    <p class="subtitle">Courses I taught in anthropology, ethnic studies, and Native American studies, including at a Hispanic-Serving Institution.</p>
   </div>
+
+  <p class="teaching-note">
+    I taught at Cabrillo College through April 2026; the page below describes the
+    pedagogy I built across Cabrillo, College of Charleston, Agnes Scott, Brandeis, and
+    UVA.
+  </p>
 
   <section>
     <h2>Courses</h2>
@@ -47,24 +53,24 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <div class="card teaching-box">
       <h2>Teaching Philosophy</h2>
       <p>
-        My classes start with Module -1: community resources — local
-        mutual aid, nonprofits, RoboBraille. Survival comes before learning.
+        My classes started with Module -1: community resources — local
+        mutual aid, nonprofits, RoboBraille. Survival came before learning.
       </p>
       <p>
-        Students have a source library they can choose from — agency over what they engage with.
-        Once per week they can substitute a reading with an equivalency: embodied practice,
-        interviewing an elder, community organizing, life experience reflection. The idea is
-        to let students actually <em>practice</em> ethnic studies and get credit for it.
-        Zines count as readings — community knowledge.
+        Students had a source library they could choose from — agency over what they engaged
+        with. Once per week they could substitute a reading with an equivalency: embodied
+        practice, interviewing an elder, community organizing, life experience reflection. The
+        idea was to let students actually <em>practice</em> ethnic studies and get credit for
+        it. Zines counted as readings — community knowledge.
       </p>
       <p>
-        No late penalties, enabled by Autograder automation. I accept this may cause students
-        to deprioritize my class relative to more rigid professors, but rigid deadlines are
-        authoritarian pedagogy — habituating ourselves and our students into authoritarianism.
-        The burnout pool model: any given week, individual students float in and out. Not
-        everyone will do their readings all the time, but enough people will do them enough
-        of the time to have good conversations. The goal: make the classroom survivable for
-        everyone, including me.
+        No late penalties — a policy I could sustain because Autograder reduced the grading
+        load. I accepted this might cause students to deprioritize my class relative to more
+        rigid professors, but rigid deadlines are authoritarian pedagogy — habituating
+        ourselves and our students into authoritarianism. The burnout pool model: any given
+        week, individual students floated in and out. Not everyone did their readings all the
+        time, but enough people did them enough of the time to have good conversations. The
+        goal: make the classroom survivable for everyone, including me.
       </p>
       <p>
         If ethnic studies can't help us adapt and build more resilient communities in the
@@ -137,6 +143,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   .where {
     color: var(--text-muted);
     font-size: var(--text-xs);
+  }
+
+  .teaching-note {
+    color: var(--text-muted);
+    font-size: var(--text-sm);
+    font-style: italic;
+    margin-bottom: var(--space-lg);
+    max-width: 65ch;
   }
 
   .teaching-boxes {
