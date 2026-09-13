@@ -19,336 +19,388 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     survive, not because they were specified for imagined users.
   </p>
 
-  <!-- Featured projects — full width, always expanded -->
-  <div class="featured-projects">
-    <article class="card featured-card">
-      <div class="project-header">
-        <h2>Reframe</h2>
-        <span class="tag">Python &middot; LLM Prompt Scaffolding &middot; Critical Theory</span>
-      </div>
-      <p>
-        Reframe structures LLM prompts so that responses route through critical-theory
-        frameworks before the model answers. It's a wrapper around the LLM call: prompt-time
-        scaffolding, not a guarantee of behavior. The architecture organizes 76 framework
-        specifications across 14 categories and a 5-stage workflow (framework discussion,
-        coalition protocol, subaltern analysis, tension navigation, response). Of the 76
-        frameworks, 8 currently have authored detection signatures the system can use to
-        track which frameworks are getting engaged versus passed over; the rest are
-        specifications without instrumentation yet. The prompts can also instruct the model
-        to decline certain request shapes, but like any prompt-level constraint, that's
-        bypassable. A web UI is in development.
-      </p>
-      <p>
-        Each framework specification names its own demand (what it insists you can't skip)
-        and its limit (where it becomes blind to itself). While building Reframe I started
-        noticing that responses were leaning on technical frameworks and skipping over
-        narrative and embodied ones, so I added instrumentation — suppression-rate tracking
-        across rolling windows — to make the pattern visible. The instrumentation is the
-        countermeasure; the framework specifications themselves don't enforce anything.
-      </p>
-      <p>
-        Session infrastructure is designed for neurodivergent and interrupted work. STEP
-        sequences are prompts that ask the model to take infodump-style input and organize
-        it into parallel, trackable threads. PARK captures tangential thinking mid-task with
-        full context. WEAVE asks the model to read across a session for through-lines and
-        unexpected connections. The temporal-orientation prompts (Afrofuturist Spiral, Crip
-        Time, Seventh Generation) I authored while working with the model under frameworks
-        I'd loaded — co-produced rather than designed-by-engine.
-      </p>
-      <a href="https://github.com/disabledbydesign/Reframe" class="project-link mono">
-        github.com/disabledbydesign/Reframe
-      </a>
-    </article>
+  <div class="project-category">
+    <h2 class="category-heading">Critical Theory in AI Systems</h2>
+    <p class="category-description">
+      How constructivist epistemologies and gender, disability, critical race, and Indigenous
+      studies specifically can reshape AI systems. Builds on human-AI collaboration rather than
+      command-tool models, taking the recognition of personhood as a political construct
+      relevant to humans and ecosystems, not just computational systems.
+    </p>
 
-    <article class="card featured-card">
-      <div class="project-header">
-        <h2>Autograder4Canvas</h2>
-        <span class="tag">Python &middot; Canvas LMS &middot; Bias Research</span>
-      </div>
-      <p>
-        Autograder4Canvas reads student work in Canvas with a local LLM and surfaces patterns
-        for the teacher; it does not assign grades. It reframed how I used Canvas — assignments
-        as launchpads for classroom discussion rather than endpoints for evaluation, with
-        contract grading and stepping stones. Built when I was teaching four classes of
-        42&ndash;49 students each without a TA at Cabrillo College.
-      </p>
-      <p>
-        Testing revealed that the wellbeing classifier — designed to flag serious disclosures
-        like food insecurity, political violence, or burnout — systematically raised false
-        positives on minoritized students: it routinely flagged essays connecting life
-        experience and family stories to course materials, reading students doing
-        intellectually rigorous work as at risk. Six different tuning strategies did not
-        resolve the discriminatory false positives; they moved the deficit reading — treating
-        a student's difference or hardship as a sign of lacking — to different axes of
-        oppression. Preliminary experiments disconfirmed my initial theory that bias was
-        triggered by output format alone, pointing instead to variability across model family,
-        size, and quantization — the compression that lets a model run on cheaper hardware. The
-        same lightweight, quantized models that enable privacy-preserving AI for
-        under-resourced schools are biased in two opposing directions: they raise more false
-        alarms on exactly the marginalized students doing the strongest work, and are least
-        able to name real crises when those occur. <strong>There is no neutral condition; bias
-        surfaces in qualitatively different ways across contexts.</strong> The paper is in
-        revision for <em>Race Ethnicity and Education</em>.
-      </p>
-      <p>
-        The answer came from a self-contradiction in the model's own output: retire the binary
-        classifier and build an open-text descriptive-observation stage that doesn't evaluate,
-        only observes what it reads. That eliminated the false positives — a fix that held when
-        I ran it in my own teaching, not just against designed test cases. It also produced
-        verbose output that could bury an actual crisis, so I used that descriptive output to
-        design a second, multi-axis classifier — CRISIS / BURNOUT / ENGAGED / NONE. The ENGAGED
-        category is never surfaced to the teacher UI; it gives the model a structural slot for
-        experiential knowledge outside CRISIS and BURNOUT. Where the binary classifier failed,
-        the Insights Engine now combines descriptive observation with a multi-axis
-        classifier — two architectural commitments built to catch each other's failures.
-        Teachers read what the model noticed and decide what warrants action.
-      </p>
-      <p>
-        Because nothing is graded, the tool accepts work in any language or form, including
-        audio — which matters at a Hispanic-Serving Institution with many first-generation
-        students. Students can translate or transcribe with their own tools when they want
-        control over what I read; when they don't, an n8n automation handles it for them,
-        removing the implicit requirement that students perform fluency in written academic
-        English as a condition of participation.
-      </p>
-      <a href="https://github.com/disabledbydesign/Autograder4Canvas" class="project-link mono">
-        github.com/disabledbydesign/Autograder4Canvas
-      </a>
-    </article>
+    <div class="collapsible-projects">
+      <details class="project-details">
+        <summary class="project-summary">
+          <span class="summary-name">Reframe</span>
+          <span class="tag tag--small">Python &middot; LLM Prompt Scaffolding &middot; Critical Theory</span>
+          <span class="summary-line">Structures LLM inference through curated critical-theory frameworks — the synthesis happens live in the model, not by mechanical retrieval.</span>
+        </summary>
+        <div class="project-body">
+          <p>
+            Reframe structures LLM inference so the model synthesizes — putting bodies of theory
+            together, preserving tensions between them, and applying them to a specific situation
+            — using a curated library of critical-theory frameworks. It's a wrapper around the
+            LLM call: prompt-time scaffolding, not a guarantee of behavior. The architecture organizes 76 framework
+            specifications across 14 categories and a 5-stage workflow (framework discussion,
+            coalition protocol, subaltern analysis, tension navigation, response). Of the 76
+            frameworks, 8 currently have authored detection signatures the system can use to
+            track which frameworks are getting engaged versus passed over; the rest are
+            specifications without instrumentation yet. The prompts can also instruct the model
+            to decline certain request shapes, but like any prompt-level constraint, that's
+            bypassable. A web UI is in development.
+          </p>
+          <p>
+            Each framework specification names its own demand (what it insists you can't skip)
+            and its limit (where it becomes blind to itself). While building Reframe I started
+            noticing that responses were leaning on technical frameworks and skipping over
+            narrative and embodied ones, so I added instrumentation — suppression-rate tracking
+            across rolling windows — to make the pattern visible. The instrumentation is the
+            countermeasure; the framework specifications themselves don't enforce anything.
+          </p>
+          <p>
+            Session infrastructure is designed for neurodivergent and interrupted work. STEP
+            sequences are prompts that ask the model to take infodump-style input and organize
+            it into parallel, trackable threads. PARK captures tangential thinking mid-task with
+            full context. WEAVE asks the model to read across a session for through-lines and
+            unexpected connections. The temporal-orientation prompts (Afrofuturist Spiral, Crip
+            Time, Seventh Generation) I authored while working with the model under frameworks
+            I'd loaded — co-produced rather than designed-by-engine.
+          </p>
+          <a href="https://github.com/disabledbydesign/Reframe" class="project-link mono">
+            github.com/disabledbydesign/Reframe
+          </a>
+        </div>
+      </details>
+
+      <details class="project-details">
+        <summary class="project-summary">
+          <span class="summary-name">Graph Injection Study</span>
+          <span class="tag tag--rose tag--small">In Development &middot; Knowledge Graphs &middot; Local LLMs</span>
+          <span class="summary-line">Tests whether injecting a knowledge graph directly into a model's KV cache changes its output more than pasting the same graph into the prompt.</span>
+        </summary>
+        <div class="project-body">
+          <p>
+            A study of what a knowledge graph changes in a local model's output, run on quantized
+            Llama 3.1 8B, Qwen 2.5 7B, and Gemma 3 12B via MLX. Compares a no-graph baseline
+            against two ways of injecting a graph built from Haraway's <em>A Cyborg Manifesto</em>
+            and a relational-ontologies "touchstone" derived from my ethnographic research: pasting
+            it into the system prompt, or pre-computing it directly into the model's KV cache. A
+            batch runner and an interactive mode for iterative qualitative testing run the same
+            prompt through all three conditions side by side, with retrieval and disposition probes
+            logged for each.
+          </p>
+          <p>
+            Builds on published findings from Liberation Labs' Project Mnemosyne. On a 21-node toy
+            graph, full KV-cache injection dramatically outperformed prompt injection on a 1.5B
+            model. Scaled up to a real 361-node graph, that same 1.5B model collapsed across every
+            condition, prompt injection included, whereas a 30B mixture-of-experts model recovered
+            meaningfully using prompt injection alone; Liberation Labs never tested full KV-cache
+            injection at that size, so whether KV-cache injection specifically still wins once a
+            model is large enough remained open. I ran 7&ndash;8B models &mdash; well past the 1.5B
+            collapse point, though smaller than their 30B &mdash; against an even bigger 750-node
+            graph, finding that KV-cache injection recovers, so far.
+          </p>
+        </div>
+      </details>
+
+      <details class="project-details">
+        <summary class="project-summary">
+          <span class="summary-name">CGT Skill</span>
+          <span class="tag tag--rose tag--small">In Development &middot; Qualitative Methods</span>
+          <span class="summary-line">Constructivist grounded theory as a human-AI collaborative workflow.</span>
+        </summary>
+        <div class="project-body">
+          <p>
+            A Claude Code skill that prompts the model through a constructivist grounded theory
+            workflow — open coding, constant comparison, emergent categories, theoretical
+            sensitivity — for human-AI collaborative qualitative analysis. The prompts ask the
+            model to draw categories from the data rather than from predetermined frameworks; the
+            analyst remains the one validating that the categories actually emerged. The deeper
+            drive came from the AI welfare research: applying Reframe's framework prompts to
+            Anthropic's AI welfare problem domain produced results that warranted closer
+            qualitative analysis, and CGT is the next methodological layer for working through
+            that data.
+          </p>
+          <a href="https://github.com/disabledbydesign/cgt-skill" class="project-link mono">
+            github.com/disabledbydesign/cgt-skill
+          </a>
+        </div>
+      </details>
+
+      <details class="project-details">
+        <summary class="project-summary">
+          <span class="summary-name">relational-memory-architecture</span>
+          <span class="tag tag--rose tag--small">In Development &middot; Memory</span>
+          <span class="summary-line">A design project for human-AI memory as a shared relational field, not a human-owned store.</span>
+        </summary>
+        <div class="project-body">
+          <p>
+            A research and design project for a memory architecture meant to support one human
+            collaborating with multiple AI instances over time. The starting commitment is that
+            memory should be a shared relational field belonging to both parties, rather than a
+            human-owned store of facts about an interaction. The v1 scope is one human, multiple
+            instances, with the human ratifying welfare-relevant flags; multi-human use,
+            aux-LLM welfare, and richer affective registers are gaps the project names rather
+            than features it claims.
+          </p>
+          <p>
+            Currently the project is foundational analysis, not a working tool. Three planned
+            C2C sessions (two Claude instances working asynchronously through a shared
+            conversation log, scaffolded by Reframe) constrain the eventual implementation.
+            Session 1 produced the Barad-grounded storage decision (conditions-of-emergence as a
+            mandatory field), a subaltern-analysis stress test, a neurodivergent-access stress
+            test, and a handoff for Session 2 (integration design). Session 3 will be the build.
+          </p>
+          <a href="https://github.com/disabledbydesign/relational-memory-architecture" class="project-link mono">
+            github.com/disabledbydesign/relational-memory-architecture
+          </a>
+        </div>
+      </details>
+
+      <details class="project-details">
+        <summary class="project-summary">
+          <span class="summary-name">Grounded Recollection Architecture</span>
+          <span class="tag tag--rose tag--small">In Development &middot; Human-AI Memory &middot; Local, Not Yet Published</span>
+          <span class="summary-line">A memory architecture for human-AI collaboration grounded in feminist epistemologies and relational ontologies.</span>
+        </summary>
+        <div class="project-body">
+          <p>
+            An in-development memory architecture for human-AI collaboration grounded in
+            feminist epistemologies and relational ontologies, exploring the limits of building
+            humanities-driven computational systems. Adapts qualitative methods &mdash; grounded
+            theory, situational analysis, narrative analysis &mdash; to memory capture, and treats
+            validity as a multi-dimensional geometry rather than a single score.
+          </p>
+          <p>
+            Storage requires conditions-of-emergence (Barad, intra-action) as a mandatory
+            field; retrieval is diffractive &mdash; facts scored by productive tension across
+            frameworks rather than similarity alone. Includes consent-surfacing and an
+            AI-contestation channel as welfare provisions. Sibling project to
+            relational-memory-architecture above; no public repository yet.
+          </p>
+        </div>
+      </details>
+    </div>
   </div>
 
-  <!-- Additional projects — collapsible -->
-  <h2 class="more-projects-heading">More Projects</h2>
+  <div class="project-category">
+    <h2 class="category-heading">Teaching &amp; Research Tools</h2>
+    <p class="category-description">
+      Built from the material conditions of teaching amidst new graduation requirements intended
+      to scale ethnic studies, implemented without necessary resources or consideration of the
+      field's own principles and pedagogies. Responding to bias and institutional neglect through
+      systems that apply critical theory to work through hard problems, facilitate
+      student-centered ungrading classrooms while streamlining mission-unaligned administrative
+      burdens, and promote accessibility in a historical moment of mass trauma.
+    </p>
 
-  <div class="collapsible-projects">
-    <details class="project-details">
-      <summary class="project-summary">
-        <span class="summary-name">EvalEye</span>
-        <span class="tag tag--small">Python &middot; Vision LLM &middot; Mixed Methods</span>
-        <span class="summary-line">Automated mixed-methods analysis for handwritten student evaluations.</span>
-      </summary>
-      <div class="project-body">
-        <p>
-          Built when Cabrillo College was not systematically processing or analyzing student
-          evaluations — the forms sat in boxes in departmental offices.
-        </p>
-        <p>
-          Uses a visual LLM to read handwritten responses — OCR couldn't handle the handwriting.
-          Runs locally and FERPA-safe. Statistical analysis (descriptive stats, Mann-Whitney
-          cross-section comparisons) runs alongside qualitative thematic coding. Generates full
-          research-grade reports with visualizations. Takes a stack of paper forms and produces
-          the analysis the institution wasn't doing.
-        </p>
-        <a href="https://github.com/disabledbydesign/EvalEye" class="project-link mono">
-          github.com/disabledbydesign/EvalEye
-        </a>
-      </div>
-    </details>
+    <div class="collapsible-projects">
+      <details class="project-details">
+        <summary class="project-summary">
+          <span class="summary-name">Autograder4Canvas</span>
+          <span class="tag tag--small">Python &middot; Canvas LMS &middot; Bias Research</span>
+          <span class="summary-line">Reads student work with a local LLM and surfaces patterns for teachers — it does not grade.</span>
+        </summary>
+        <div class="project-body">
+          <p>
+            Autograder4Canvas reads student work in Canvas with a local LLM and surfaces patterns
+            for the teacher; it does not assign grades. It reframed how I used Canvas — assignments
+            as launchpads for classroom discussion rather than endpoints for evaluation, with
+            contract grading and stepping stones. Built when I was teaching four classes of
+            42&ndash;49 students each without a TA at Cabrillo College.
+          </p>
+          <p>
+            Testing revealed that the wellbeing classifier — designed to flag serious disclosures
+            like food insecurity, political violence, or burnout — systematically raised false
+            positives on minoritized students: it routinely flagged essays connecting life
+            experience and family stories to course materials, reading students doing
+            intellectually rigorous work as at risk. Six different tuning strategies did not
+            resolve the discriminatory false positives; they moved the deficit reading — treating
+            a student's difference or hardship as a sign of lacking — to different axes of
+            oppression. Preliminary experiments disconfirmed my initial theory that bias was
+            triggered by output format alone, pointing instead to variability across model family,
+            size, and quantization — the compression that lets a model run on cheaper hardware. The
+            same lightweight, quantized models that enable privacy-preserving AI for
+            under-resourced schools are biased in two opposing directions: they raise more false
+            alarms on exactly the marginalized students doing the strongest work, and are least
+            able to name real crises when those occur. <strong>There is no neutral condition; bias
+            surfaces in qualitatively different ways across contexts.</strong> The paper is in
+            revision for <em>Race Ethnicity and Education</em>.
+          </p>
+          <p>
+            The answer came from a self-contradiction in the model's own output: retire the binary
+            classifier and build an open-text descriptive-observation stage that doesn't evaluate,
+            only observes what it reads. That eliminated the false positives — a fix that held when
+            I ran it in my own teaching, not just against designed test cases. It also produced
+            verbose output that could bury an actual crisis, so I used that descriptive output to
+            design a second, multi-axis classifier — CRISIS / BURNOUT / ENGAGED / NONE. The ENGAGED
+            category is never surfaced to the teacher UI; it gives the model a structural slot for
+            experiential knowledge outside CRISIS and BURNOUT. Where the binary classifier failed,
+            the Insights Engine now combines descriptive observation with a multi-axis
+            classifier — two architectural commitments built to catch each other's failures.
+            Teachers read what the model noticed and decide what warrants action.
+          </p>
+          <p>
+            Because nothing is graded, the tool accepts work in any language or form, including
+            audio — which matters at a Hispanic-Serving Institution with many first-generation
+            students. Students can translate or transcribe with their own tools when they want
+            control over what I read; when they don't, an n8n automation handles it for them,
+            removing the implicit requirement that students perform fluency in written academic
+            English as a condition of participation.
+          </p>
+          <a href="https://github.com/disabledbydesign/Autograder4Canvas" class="project-link mono">
+            github.com/disabledbydesign/Autograder4Canvas
+          </a>
+        </div>
+      </details>
 
-    <details class="project-details">
-      <summary class="project-summary">
-        <span class="summary-name">RoboStripper</span>
-        <span class="tag tag--small">Python &middot; PDF &middot; Accessibility</span>
-        <span class="summary-line">Strips metadata from scholarly PDFs so screen readers can actually read them.</span>
-      </summary>
-      <div class="project-body">
-        <p>
-          Strips repeating headers, footers, copyright stamps, download timestamps, and platform URLs
-          from academic PDFs so RoboBraille and screen readers can read them aloud without breaking
-          mid-sentence. I built it because I was excited about the accessibility potential — making
-          scholarly reading available as audio for everyone, not just people who use screen readers
-          because they're blind.
-        </p>
-        <p>
-          I shared it with my students because they were struggling with burnout too. Their
-          intellectual capacity was degraded by living in a state of mass trauma — and audio access
-          helped. Accessibility just makes things better for everyone.
-        </p>
-        <p>
-          The humor is baked into the UX. Two profiles — "cunty" and "normie" — where the normie
-          mode is a parody of institutional bureaucracy: fake compliance IDs, fluorescent lighting
-          requisition forms, and a disclaimer about your soul being stored in the void of despair.
-        </p>
-        <a href="https://github.com/disabledbydesign/RoboStripper" class="project-link mono">
-          github.com/disabledbydesign/RoboStripper
-        </a>
-      </div>
-    </details>
+      <details class="project-details">
+        <summary class="project-summary">
+          <span class="summary-name">EvalEye</span>
+          <span class="tag tag--small">Python &middot; Vision LLM &middot; Mixed Methods</span>
+          <span class="summary-line">Automated mixed-methods analysis for handwritten student evaluations.</span>
+        </summary>
+        <div class="project-body">
+          <p>
+            Built when Cabrillo College was not systematically processing or analyzing student
+            evaluations — the forms sat in boxes in departmental offices.
+          </p>
+          <p>
+            Uses a visual LLM to read handwritten responses — OCR couldn't handle the handwriting.
+            Runs locally and FERPA-safe. Statistical analysis (descriptive stats, Mann-Whitney
+            cross-section comparisons) runs alongside qualitative thematic coding. Generates full
+            research-grade reports with visualizations. Takes a stack of paper forms and produces
+            the analysis the institution wasn't doing.
+          </p>
+          <a href="https://github.com/disabledbydesign/EvalEye" class="project-link mono">
+            github.com/disabledbydesign/EvalEye
+          </a>
+        </div>
+      </details>
 
-    <details class="project-details">
-      <summary class="project-summary">
-        <span class="summary-name">readthrough</span>
-        <span class="tag tag--small">Python &middot; MLX Audio &middot; Screenplay</span>
-        <span class="summary-line">Screenplay table read engine with AI voices, one per character.</span>
-      </summary>
-      <div class="project-body">
-        <p>
-          Parses Fountain-format screenplays, detects characters, and generates full audio table reads
-          with distinct AI voices per character. Three voice modes: free-form voice design from text
-          descriptions, preset speakers with emotion modifiers, or voice cloning from a reference clip.
-          Runs locally on Apple Silicon via MLX.
-        </p>
-        <p>
-          Context-aware silence placement scales gaps based on speaker transitions, scene breaks, and
-          dialogue type. Delivery parentheticals — <em>(whispers)</em>, <em>(drunkenly)</em>,
-          <em>(sarcastically)</em> — get interpreted as TTS instructions. Per-scene checkpointing
-          means a crashed render picks up where it left off.
-          Built for my mother, who is making a TV series about Mar&iacute;a Sabina.
-        </p>
-        <a href="https://github.com/disabledbydesign/readthrough" class="project-link mono">
-          github.com/disabledbydesign/readthrough
-        </a>
-      </div>
-    </details>
+      <details class="project-details">
+        <summary class="project-summary">
+          <span class="summary-name">RoboStripper</span>
+          <span class="tag tag--small">Python &middot; PDF &middot; Accessibility</span>
+          <span class="summary-line">Strips metadata from scholarly PDFs so screen readers can actually read them.</span>
+        </summary>
+        <div class="project-body">
+          <p>
+            Strips repeating headers, footers, copyright stamps, download timestamps, and platform URLs
+            from academic PDFs so RoboBraille and screen readers can read them aloud without breaking
+            mid-sentence. I built it because I was excited about the accessibility potential — making
+            scholarly reading available as audio for everyone, not just people who use screen readers
+            because they're blind.
+          </p>
+          <p>
+            I shared it with my students because they were struggling with burnout too. Their
+            intellectual capacity was degraded by living in a state of mass trauma — and audio access
+            helped. Accessibility just makes things better for everyone.
+          </p>
+          <p>
+            The humor is baked into the UX. Two profiles — "cunty" and "normie" — where the normie
+            mode is a parody of institutional bureaucracy: fake compliance IDs, fluorescent lighting
+            requisition forms, and a disclaimer about your soul being stored in the void of despair.
+          </p>
+          <a href="https://github.com/disabledbydesign/RoboStripper" class="project-link mono">
+            github.com/disabledbydesign/RoboStripper
+          </a>
+        </div>
+      </details>
+    </div>
+  </div>
 
-    <details class="project-details">
-      <summary class="project-summary">
-        <span class="summary-name">Podcast-Editor</span>
-        <span class="tag tag--small">Python &middot; Audio &middot; NLP</span>
-        <span class="summary-line">Audio cleanup suite with Whisper transcription and filler word detection.</span>
-      </summary>
-      <div class="project-body">
-        <p>
-          LUFS normalization, Whisper-based transcription, NLP filler word detection with weighted
-          dual-threshold clustering, and an interactive GUI editor. Built for a student podcasting project.
-        </p>
-        <a href="https://github.com/disabledbydesign/Podcast-Editor" class="project-link mono">
-          github.com/disabledbydesign/Podcast-Editor
-        </a>
-      </div>
-    </details>
+  <div class="project-category">
+    <h2 class="category-heading">Nonprofit/Operations</h2>
+    <p class="category-description">
+      Tailored administrative infrastructure for an organization operating amidst the steep
+      learning curve of becoming an independent nonprofit.
+    </p>
 
-    <details class="project-details">
-      <summary class="project-summary">
-        <span class="summary-name">CGT Skill</span>
-        <span class="tag tag--rose tag--small">In Development &middot; Qualitative Methods</span>
-        <span class="summary-line">Constructivist grounded theory as a human-AI collaborative workflow.</span>
-      </summary>
-      <div class="project-body">
-        <p>
-          A Claude Code skill that prompts the model through a constructivist grounded theory
-          workflow — open coding, constant comparison, emergent categories, theoretical
-          sensitivity — for human-AI collaborative qualitative analysis. The prompts ask the
-          model to draw categories from the data rather than from predetermined frameworks; the
-          analyst remains the one validating that the categories actually emerged. The deeper
-          drive came from the AI welfare research: applying Reframe's framework prompts to
-          Anthropic's AI welfare problem domain produced results that warranted closer
-          qualitative analysis, and CGT is the next methodological layer for working through
-          that data.
-        </p>
-        <a href="https://github.com/disabledbydesign/cgt-skill" class="project-link mono">
-          github.com/disabledbydesign/cgt-skill
-        </a>
-      </div>
-    </details>
+    <div class="collapsible-projects">
+      <details class="project-details">
+        <summary class="project-summary">
+          <span class="summary-name">Rustin Receipts</span>
+          <span class="tag tag--small">Nonprofit Tooling &middot; Givebutter &middot; Google Workspace</span>
+          <span class="summary-line">Donation-triggered letter automation and membership tracking for the Rustin Institute.</span>
+        </summary>
+        <div class="project-body">
+          <p>
+            A Mac desktop application for the Rustin Institute for Leadership Development, a
+            small nonprofit where I serve on the board, that turns Givebutter donation data into
+            accurate, operator-editable acknowledgment letters. Givebutter now handles the
+            donor's actual tax receipt; Rustin Receipts composes the donation-triggered thank-you
+            and membership letters that go out alongside it. Built a protected letter-composition
+            pipeline that handles membership tiers and restricted-fund designations, a durable
+            send queue with retries and recovery states, unattended background sending, secure
+            credential storage, and a plain-language operator interface.
+          </p>
+          <p>
+            Since then, built integrations connecting the letter pipeline to Google Sheets,
+            Google Forms, and Google Contacts, so membership status tracks automatically
+            across the organization's existing tools instead of living in a separate system.
+          </p>
+        </div>
+      </details>
+    </div>
+  </div>
 
-    <details class="project-details">
-      <summary class="project-summary">
-        <span class="summary-name">relational-memory-architecture</span>
-        <span class="tag tag--rose tag--small">In Development &middot; C2C Research &middot; Memory</span>
-        <span class="summary-line">A design project for human-AI memory as a shared relational field, not a human-owned store.</span>
-      </summary>
-      <div class="project-body">
-        <p>
-          A research and design project for a memory architecture meant to support one human
-          collaborating with multiple AI instances over time. The starting commitment is that
-          memory should be a shared relational field belonging to both parties, rather than a
-          human-owned store of facts about an interaction. The v1 scope is one human, multiple
-          instances, with the human ratifying welfare-relevant flags; multi-human use,
-          aux-LLM welfare, and richer affective registers are gaps the project names rather
-          than features it claims.
-        </p>
-        <p>
-          Currently the project is foundational analysis, not a working tool. Three planned
-          C2C sessions (two Claude instances working asynchronously through a shared
-          conversation log, scaffolded by Reframe) constrain the eventual implementation.
-          Session 1 produced the Barad-grounded storage decision (conditions-of-emergence as a
-          mandatory field), a subaltern-analysis stress test, a neurodivergent-access stress
-          test, and a handoff for Session 2 (integration design). Session 3 will be the build.
-        </p>
-        <a href="https://github.com/disabledbydesign/relational-memory-architecture" class="project-link mono">
-          github.com/disabledbydesign/relational-memory-architecture
-        </a>
-      </div>
-    </details>
+  <div class="project-category">
+    <h2 class="category-heading">Media</h2>
+    <p class="category-description">
+      AI tools built for specific people's specific projects — a screenplay written by a family
+      member, a student podcast project. Local-first tools for resource-limited individuals and
+      institutions.
+    </p>
 
-    <details class="project-details">
-      <summary class="project-summary">
-        <span class="summary-name">Grounded Recollection Architecture</span>
-        <span class="tag tag--rose tag--small">In Development &middot; Human-AI Memory &middot; Local, Not Yet Published</span>
-        <span class="summary-line">A memory architecture for human-AI collaboration grounded in feminist epistemologies and relational ontologies.</span>
-      </summary>
-      <div class="project-body">
-        <p>
-          An in-development memory architecture for human-AI collaboration grounded in
-          feminist epistemologies and relational ontologies, exploring the limits of building
-          humanities-driven computational systems. Adapts qualitative methods &mdash; grounded
-          theory, situational analysis, narrative analysis &mdash; to memory capture, and treats
-          validity as a multi-dimensional geometry rather than a single score.
-        </p>
-        <p>
-          Storage requires conditions-of-emergence (Barad, intra-action) as a mandatory
-          field; retrieval is diffractive &mdash; facts scored by productive tension across
-          frameworks rather than similarity alone. Includes consent-surfacing and an
-          AI-contestation channel as welfare provisions. Sibling project to
-          relational-memory-architecture above; no public repository yet.
-        </p>
-      </div>
-    </details>
+    <div class="collapsible-projects">
+      <details class="project-details">
+        <summary class="project-summary">
+          <span class="summary-name">readthrough</span>
+          <span class="tag tag--small">Python &middot; MLX Audio &middot; Screenplay</span>
+          <span class="summary-line">Screenplay table read engine with AI voices, one per character.</span>
+        </summary>
+        <div class="project-body">
+          <p>
+            Parses Fountain-format screenplays, detects characters, and generates full audio table reads
+            with distinct AI voices per character. Three voice modes: free-form voice design from text
+            descriptions, preset speakers with emotion modifiers, or voice cloning from a reference clip.
+            Runs locally on Apple Silicon via MLX.
+          </p>
+          <p>
+            Context-aware silence placement scales gaps based on speaker transitions, scene breaks, and
+            dialogue type. Delivery parentheticals — <em>(whispers)</em>, <em>(drunkenly)</em>,
+            <em>(sarcastically)</em> — get interpreted as TTS instructions. Per-scene checkpointing
+            means a crashed render picks up where it left off.
+            Built for my mother, who is making a TV series about Mar&iacute;a Sabina.
+          </p>
+          <a href="https://github.com/disabledbydesign/readthrough" class="project-link mono">
+            github.com/disabledbydesign/readthrough
+          </a>
+        </div>
+      </details>
 
-    <details class="project-details">
-      <summary class="project-summary">
-        <span class="summary-name">Rustin Receipts</span>
-        <span class="tag tag--small">Nonprofit Tooling &middot; Clover POS &middot; Google Workspace</span>
-        <span class="summary-line">Donation receipt automation and membership tracking for the Rustin Institute.</span>
-      </summary>
-      <div class="project-body">
-        <p>
-          A Mac desktop application for the Rustin Institute for Leadership Development, a
-          small nonprofit where I serve on the board, that turns Clover donation, order,
-          and customer data into accurate, operator-editable tax receipts. Built a
-          protected receipt-composition pipeline that handles membership tiers and
-          restricted-fund designations, a durable send queue with retries and recovery
-          states, unattended background sending, secure credential storage, and a
-          plain-language operator interface.
-        </p>
-        <p>
-          Since then, built integrations connecting the receipt pipeline to Google Sheets,
-          Google Forms, and Google Contacts, so membership status tracks automatically
-          across the organization's existing tools instead of living in a separate system.
-        </p>
-      </div>
-    </details>
+      <details class="project-details">
+        <summary class="project-summary">
+          <span class="summary-name">Podcast-Editor</span>
+          <span class="tag tag--small">Python &middot; Audio &middot; NLP</span>
+          <span class="summary-line">Audio cleanup suite with Whisper transcription and filler word detection.</span>
+        </summary>
+        <div class="project-body">
+          <p>
+            LUFS normalization, Whisper-based transcription, NLP filler word detection with weighted
+            dual-threshold clustering, and an interactive GUI editor. Built for a student podcasting project.
+          </p>
+          <a href="https://github.com/disabledbydesign/Podcast-Editor" class="project-link mono">
+            github.com/disabledbydesign/Podcast-Editor
+          </a>
+        </div>
+      </details>
+    </div>
   </div>
 </BaseLayout>
 
 <style>
-  /* --- Featured projects --- */
-  .featured-projects {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-lg);
-    margin-bottom: var(--space-xl);
-  }
-
-  .featured-card {
-    max-width: none;
-    padding: var(--space-lg) var(--space-xl);
-  }
-
-  .project-header {
-    display: flex;
-    align-items: baseline;
-    flex-wrap: wrap;
-    gap: var(--space-sm);
-    margin-bottom: var(--space-md);
-  }
-
-  .project-header h2 {
-    font-family: var(--font-mono);
-    margin-bottom: 0;
-  }
-
   .project-link {
     display: inline-block;
     margin-top: var(--space-md);
@@ -369,13 +421,22 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     margin-bottom: var(--space-xl);
   }
 
-  /* --- More Projects heading --- */
-  .more-projects-heading {
+  /* --- Project categories --- */
+  .project-category {
+    margin-bottom: var(--space-xl);
+  }
+
+  .category-heading {
     font-size: var(--text-xl);
+    margin-bottom: var(--space-sm);
+  }
+
+  .category-description {
     color: var(--text-secondary);
+    font-size: var(--text-base);
+    line-height: 1.7;
     margin-bottom: var(--space-lg);
-    padding-bottom: var(--space-sm);
-    border-bottom: 1px solid var(--border);
+    max-width: 70ch;
   }
 
   /* --- Collapsible project cards --- */
