@@ -41,6 +41,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
   <section>
     <div class="feature-grid">
+      <a href="/consulting/" class="feature-link feature-link-consulting">
+        <h2>Consulting</h2>
+        <p>I begin with the whole lived system: the technology, the organization, the histories and relationships around it, the people whose knowledge keeps it functioning, and the people who carry the consequences when it fails. I use qualitative inquiry to find what standard measures cannot see.</p>
+      </a>
       <a href="/research/" class="feature-link">
         <h2>Research</h2>
         <p>An elder said: "Did you ever consider that it isn't a bird?" It was a moth. That question reorganized fifteen years of fieldwork and five research programs.</p>
@@ -64,6 +68,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 </BaseLayout>
 
 <style>
+  .feature-link-consulting { grid-column: 1 / -1; }
+  .feature-link-consulting p { max-width: 70ch; }
+
   .hero-practice {
     max-width: 43rem;
     margin-top: var(--space-lg);

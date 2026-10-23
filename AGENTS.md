@@ -157,3 +157,11 @@ Rules:
 - Before answering architecture or codebase questions, read graphify-out/GRAPH_REPORT.md for god nodes and community structure
 - If graphify-out/wiki/index.md exists, navigate it instead of reading raw files
 - After modifying code files in this session, run `python3 -c "from graphify.watch import _rebuild_code; from pathlib import Path; _rebuild_code(Path('.'))"` to keep the graph current
+
+## Parked follow-up — Autograder algorithmic-bias research
+
+Requested by June on October 22, 2026 for a different day: add the Autograder algorithmic-bias research to `src/pages/research.astro`. This is a future content task, not part of the current homepage Consulting-card addition. Read the current research record and June's tuned SSRC materials before drafting. Describe the opposed harms and architectural reframe with their evidence limits; do not claim that bias was eliminated.
+
+## Separate follow-up — homepage phone overflow
+
+During the October 22 Consulting-card check, the homepage hero overflowed a 390px viewport; document width was 456px. The same overflow remained with the new Consulting card removed. The card grid itself fit within the viewport. Investigate the existing hero layout separately; no hero change was included in the card addition.
