@@ -4,7 +4,7 @@
    =================================== */
 
 /* --- Fonts --- */
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400&display=swap');
 
 /* --- Custom Properties --- */
 :root {
@@ -117,6 +117,10 @@ body {
   line-height: 1.7;
   color: var(--text-primary);
   background-color: var(--bg-void);
+  background-image:
+    radial-gradient(ellipse 85rem 52rem at 5% 8rem, rgba(240, 168, 48, 0.075), transparent 72%),
+    radial-gradient(ellipse 68rem 58rem at 100% 38rem, rgba(106, 154, 184, 0.055), transparent 75%);
+  background-repeat: no-repeat;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   min-height: 100vh;
@@ -147,19 +151,6 @@ a:focus-visible {
   border-radius: 2px;
 }
 
-/* External links */
-a[href^="http"]::after {
-  content: '';
-  display: inline-block;
-  width: 0.7em;
-  height: 0.7em;
-  margin-left: 0.25em;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236A9AB8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6'/%3E%3Cpolyline points='15 3 21 3 21 9'/%3E%3Cline x1='10' y1='14' x2='21' y2='3'/%3E%3C/svg%3E");
-  background-size: contain;
-  background-repeat: no-repeat;
-  vertical-align: baseline;
-}
-
 /* Mail links get an envelope icon */
 a[href^="mailto:"]::after {
   content: '';
@@ -173,13 +164,41 @@ a[href^="mailto:"]::after {
   vertical-align: baseline;
 }
 
-/* Don't add external icon to nav or footer links */
-nav a[href^="http"]::after,
-footer a[href^="http"]::after,
+/* Keep mail icons out of the navigation and footer */
 nav a[href^="mailto:"]::after,
 footer a[href^="mailto:"]::after {
   display: none;
 }
+
+/* --- Shared Action Links --- */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 44px;
+  max-width: 100%;
+  padding: 0.625rem 1.25rem;
+  background: var(--bg-input);
+  border: 1px solid var(--amber-dim);
+  border-radius: 6px;
+  color: var(--amber);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: var(--text-base);
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+  text-decoration: none;
+  transition: border-color var(--transition-fast), background-color var(--transition-fast);
+}
+.button:hover, .button:active {
+  color: var(--amber);
+  border-color: var(--amber);
+  background: var(--bg-elevated);
+  text-decoration: none;
+}
+.button:focus-visible { outline: 2px solid var(--amber); outline-offset: 4px; }
+.button[href^="mailto:"]::after { flex: 0 0 0.8em; }
 
 /* --- Typography --- */
 h1, h2, h3, h4 {
@@ -310,6 +329,14 @@ section:last-child {
   color: var(--text-secondary);
   margin-top: var(--space-sm);
 }
+
+/* --- Practice identity --- */
+.brand-title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  line-height: 1.2;
+}
+.page-header .brand-title { color: var(--rose-hot); font-size: clamp(1.75rem, 4.4444444vw, 4rem); }
 
 /* --- Cards --- */
 .card {

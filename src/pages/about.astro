@@ -3,11 +3,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout
-  title="About"
+  title="Disabled by Design"
   description="Disabled by Design — what the name means, who June is, and the design orientation behind the work."
 >
   <div class="page-header">
-    <h1><span class="rose">Disabled</span> <span class="by">by</span> <span class="rose">Design</span></h1>
+    <h1 class="brand-title">Disabled <span class="brand-by">by</span> Design</h1>
     <p class="subtitle">A structural critique, a design parameter, and a refusal.</p>
   </div>
 
@@ -15,14 +15,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <h2>What the Name Means</h2>
     <div class="about-content">
       <p>
-        I design from the standpoint of a disabled trans ethnic studies professor on contingent
-        faculty lines. Every one of those positions is a parameter — shaping what I perceive,
+        I design from the standpoint of a disabled trans Ethnic Studies scholar who taught on
+        contingent faculty lines. Every one of those positions is a parameter — shaping what I perceive,
         what I build, and what I refuse to accept as given. They let me see things somebody with
         a different neurotype, a different body, a different institutional position would not
         have thought of. That's a feature, not a deficit.
       </p>
       <p>
-        The name also names the problem: systems are <em>designed</em> in ways that produce
+        Disabled by Design also names the problem: systems are <em>designed</em> in ways that produce
         disability. Rigid deadlines, surveillance grading, deficit-model assessments — the
         infrastructure disables people, then calls the people broken. The social model of
         disability applied to every structure I study and build.
@@ -30,6 +30,15 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <p>
         And there's the third meaning: against the impulse to genetic-engineer away disability.
         I don't want a future that optimizes me out. My existence is an asset.
+      </p>
+      <p>
+        Disabled knowledge can do more than identify that exclusion: it can change what a system is
+        for, whose knowledge shapes it, and what gets built. I bring that practice into
+        <a href="/consulting/">consulting</a> with justice-oriented organizations, carrying qualitative
+        and critical inquiry into the systems they rely on. I draw distinctly—not interchangeably—on
+        disability justice; feminist, queer and trans thought; anti-racist and anti-colonial analysis;
+        Indigenous scholarship; and community-based research. Each makes different relations of power
+        and possibility visible.
       </p>
     </div>
   </section>
@@ -53,7 +62,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         whiteness, and to attempt to surface burnout signals. They also instruct the model
         to counter common LLM biases against minoritized students. Whether the model holds
         any of those instructions on a given run is an empirical question, not a guarantee.
-        FERPA-safe; runs locally on a teacher's laptop. Each piece feeds the other.
+        The model runs locally on the teacher's laptop, so student work is not sent to an external
+        AI provider. Each piece feeds the other.
       </p>
       <p>
         I built one tool to help me do more praxis, and it helped me build prompt scaffolding
@@ -109,7 +119,5 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     font-size: var(--text-lg);
   }
 
-  .by {
-    color: var(--text-primary);
-  }
+  .about-content a { text-decoration: underline; text-underline-offset: 3px; }
 </style>

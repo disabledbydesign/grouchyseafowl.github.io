@@ -8,7 +8,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 >
   <div class="page-header cv-header">
     <h1>Curriculum Vitae</h1>
-    <a href="/files/Bloch_CV.pdf" class="cv-download" download>
+    <a href="/files/Bloch_CV.pdf" class="button cv-download" download>
       Download CV (PDF)
     </a>
   </div>
@@ -278,26 +278,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     flex-wrap: wrap;
   }
 
-  .cv-download {
-    display: inline-block;
-    padding: var(--space-sm) var(--space-lg);
-    background: var(--bg-input);
-    border: 1px solid var(--amber-dim);
-    border-radius: 6px;
-    color: var(--amber);
-    font-family: var(--font-body);
-    font-weight: 600;
-    font-size: var(--text-sm);
-    text-decoration: none;
-    transition: border-color var(--transition-base), background-color var(--transition-base);
-    white-space: nowrap;
-  }
-
-  .cv-download:hover {
-    border-color: var(--amber);
-    background-color: var(--bg-elevated);
-    text-decoration: none;
-  }
 
   .cv-layout {
     width: 100%;

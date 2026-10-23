@@ -19,6 +19,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     survive, not because they were specified for imagined users.
   </p>
 
+  <p class="consulting-bridge">
+    These builds are part of the research practice behind my consulting: critical analysis changes
+    how we design, and what breaks in the build becomes evidence that can change the analysis.
+    <a href="/consulting/">See how I work with organizations</a>
+  </p>
+
   <div class="project-category">
     <h2 class="category-heading">Critical Theory in AI Systems</h2>
     <p class="category-description">
@@ -228,17 +234,17 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             revision for <em>Race Ethnicity and Education</em>.
           </p>
           <p>
-            The answer came from a self-contradiction in the model's own output: retire the binary
-            classifier and build an open-text descriptive-observation stage that doesn't evaluate,
-            only observes what it reads. That eliminated the false positives — a fix that held when
-            I ran it in my own teaching, not just against designed test cases. It also produced
-            verbose output that could bury an actual crisis, so I used that descriptive output to
-            design a second, multi-axis classifier — CRISIS / BURNOUT / ENGAGED / NONE. The ENGAGED
-            category is never surfaced to the teacher UI; it gives the model a structural slot for
-            experiential knowledge outside CRISIS and BURNOUT. Where the binary classifier failed,
-            the Insights Engine now combines descriptive observation with a multi-axis
-            classifier — two architectural commitments built to catch each other's failures.
-            Teachers read what the model noticed and decide what warrants action.
+            A self-contradiction in the model's own output suggested a different move: retire the
+            binary verdict and build an open-text descriptive-observation stage that records what it
+            reads without deciding whether a student is in crisis. Because descriptive output can
+            also bury a real crisis in verbosity, I used it to design a second, multi-axis
+            architecture — CRISIS / BURNOUT / ENGAGED / NONE. ENGAGED gives experiential and family
+            knowledge a structural place outside deficit categories, and it is never surfaced to
+            the teacher as a flag. Teachers read what the model noticed and decide what warrants
+            action. This reframe reduced one class of false alarms in classroom use; it did not
+            eliminate bias. I continue to test how model family, size, quantization, backend, prompt
+            context, and task structure change both opposed harms: false alarms on strong work and
+            failures to name serious harm.
           </p>
           <p>
             Because nothing is graded, the tool accepts work in any language or form, including
@@ -267,7 +273,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           </p>
           <p>
             Uses a visual LLM to read handwritten responses — OCR couldn't handle the handwriting.
-            Runs locally and FERPA-safe. Statistical analysis (descriptive stats, Mann-Whitney
+            Runs locally, keeping student forms on the teacher's or institution's computer rather
+            than sending them to an external AI provider. Statistical analysis (descriptive stats, Mann-Whitney
             cross-section comparisons) runs alongside qualitative thematic coding. Generates full
             research-grade reports with visualizations. Takes a stack of paper forms and produces
             the analysis the institution wasn't doing.
@@ -419,6 +426,21 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     font-size: var(--text-lg);
     line-height: 1.8;
     margin-bottom: var(--space-xl);
+  }
+
+  .consulting-bridge {
+    max-width: 70ch;
+    margin: calc(-1 * var(--space-lg)) 0 var(--space-xl);
+    padding: var(--space-lg);
+    border-left: 2px solid var(--amber-dim);
+    color: var(--text-secondary);
+    background: rgba(240, 168, 48, 0.04);
+  }
+
+  .consulting-bridge a {
+    display: inline-block;
+    margin-top: var(--space-sm);
+    font-weight: 600;
   }
 
   /* --- Project categories --- */

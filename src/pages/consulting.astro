@@ -1,0 +1,298 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+// Copy authority: June's Consulting IP framework and Portfolio consulting page strategy.
+const process = [
+  {
+    "label": "Situated and community knowledge",
+    "title": "Situated and community knowledge must be able to change the design",
+    "body": "The people doing the work and living with its consequences hold knowledge that formal requirements, datasets, and organizational descriptions often do not contain. Systems are often designed around an implicit norm—including an imagined “standard human.” Situated and community knowledge destabilizes that norm by beginning from specific bodies, experiences, relations, and locations. It matters when it can reframe the task, change which source carries weight, define exceptions, alter an evaluation criterion, stop an action, or redirect what gets built. Consultation without consequence is not the same thing."
+  },
+  {
+    "label": "Trace asymmetrical lived systems",
+    "title": "Social inequalities—including algorithmic bias—are design parameters to build around and against",
+    "body": "Bias, unequal exposure to error, inaccessible defaults, forced legibility, uneven administrative burden, data extraction, and different capacities to absorb failure are not edge conditions to inspect after a system is built. They must shape the design problem from the beginning. The relevant asymmetry must be named rather than collapsed into generic equity language. Disability justice, queer and feminist thought, anti-racism, anti-colonial analysis, and Indigenous sovereignty do not supply one interchangeable checklist; each changes what the designer must notice and what a responsible intervention can mean."
+  },
+  {
+    "label": "Reframe the task from first principles",
+    "title": "Reframe the task before automating it",
+    "body": "The first question is not how to automate a process. It is why the task matters, what it should accomplish, whether implementation lives up to those values, and where unexpected and unequal consequences sit. I return to first principles in order to automate the task well, without trading ethics for efficiency. This means redesigning social and technological infrastructure as an integrated whole so that automation does not become merely an exercise in algorithmic bias."
+  },
+  {
+    "label": "Design social alongside technological infrastructure",
+    "title": "Critical strategy for integrated technological and social systems",
+    "body": "Technology is not a separate layer placed on top of an organization. Categories, interfaces, permissions, workflows, data structures, models, staff practices, institutional histories, and informal workarounds form one sociotechnical system. Designing the technical part without the social system—or treating the social context as an implementation concern—misdescribes the object being designed. Put plainly: a technical system cannot be understood apart from the people, practices, and power relations through which it works. Ethical solutions require designing both together, not simply automating tasks that replicate existing social systems."
+  },
+  {
+    "label": "Build capacity and collective inheritance",
+    "title": "Infrastructure should expand collective capacity without displacing collective knowledge",
+    "body": "The aim is not only a functioning tool. The infrastructure should help the people responsible for the work understand what it does, question its outputs, correct it, maintain the parts they can reasonably inherit, and decide when it should change or end. This is a design priority, not a guaranteed outcome: organizations may lack time, funding, technical staff, or code literacy. Good handoff cannot manufacture capacity that the surrounding conditions withhold."
+  }
+];
+const services = [
+  {
+    "id": "strategy",
+    "name": "Technology strategy",
+    "action": "Reframe the technology decision",
+    "body": "When an organization is deciding whether to adopt, build, automate, replace, or refuse a technology, I do not treat the requested tool as the starting point. I study what the work is for, how people are accomplishing it now, what the formal process leaves out, and who would bear the cost of a bad decision. The result is a clearer account of the problem and a grounded direction for what—if anything—to build.",
+    "additionalParagraph": "I also audit existing systems and vendor relationships. I examine unequal control over infrastructure and unequal exposure to its failures: whose needs a platform serves, who controls it, and who bears the costs when it fails. Vendor dependence, opaque systems, and repair work pushed onto staff are part of the design problem. I help organizations understand those constraints and decide what to repair, what accountability to seek from a provider, and when to change the arrangement."
+  },
+  {
+    "id": "automation",
+    "name": "Responsible automation",
+    "action": "Build the right division of labor among people, AI, and code",
+    "body": "Human and community knowledge, probabilistic AI, and deterministic code are useful in different ways and fail in different ways. I design how they work together: people interpret meaning, history, and consequence; AI can surface patterns or possibilities that remain open to review; exact code handles repeatable rules and checks. Clear boundaries, review paths, and ways to stop or redirect the process keep one kind of capability from quietly standing in for all the others."
+  },
+  {
+    "id": "data",
+    "name": "Local data stewardship and knowledge governance",
+    "action": "Keep sensitive data and organizational knowledge under accountable control",
+    "body": "Map what information the organization holds, where it moves, which records people actually rely on, and where conflicts or gaps create risk. Then build practical rules for access, correction, retention, reuse, and source authority so staff can make decisions without treating a database—or last year's grant language—as automatically true. Where privacy, sovereignty, vendor dependence, or computing access matters, design local or open data routes and governance together rather than treating storage as a separate technical choice."
+  },
+  {
+    "id": "knowledge-infrastructure",
+    "name": "Knowledge infrastructure",
+    "action": "Make organizational knowledge usable without erasing its context.",
+    "body": "Essential knowledge often lives in people's practices, scattered files, and records that disagree. I help organizations bring that material into a working system for research, planning, and writing. For grant writing, I build reusable knowledge bases that connect organizational records to supported claims and drafting material across applications. I connect claims to their sources, distinguish current information from older records, and make gaps and disagreements visible. Shared documentation and review interfaces let the people who know the work check information in context and contribute corrections. I build ways to carry those corrections back into the records and materials that depend on them, while keeping sensitive information out of shared views."
+  },
+  {
+    "id": "ux-interface-design",
+    "name": "UX and interface design",
+    "action": "Express complex ideas through intuitive UX.",
+    "body": "I use space, layout, and visual hierarchy to express complex concepts, relationships, and choices through websites and applications. I design around people's actual tasks, knowledge, and access needs, refining interfaces through use and feedback. Those differences shape the categories, navigation, visual hierarchy, language, and interactions. Clear choices, useful previews, and explanations of what happens next help people navigate consequential steps. Important distinctions and uncertainty should remain visible, with ways to question information, correct a record, revise a choice, or pause a process. I also review existing websites and workflows to find confusing choices, broken paths, and handoffs where information fails to carry through or actions do not complete. The aim is to help people understand and act while retaining control over what happens next."
+  },
+  {
+    "id": "capacity",
+    "name": "Critical technology capacity building and collective inheritance",
+    "action": "Build for shared capacity and collective inheritance",
+    "body": "Turn tacit practices, scattered documentation, and survival workarounds into knowledge the organization can hold together. Build the interfaces, source trails, operator choices, documentation, teaching, and repair paths people need to use and challenge the system. Be explicit about what staff can reasonably maintain and what still requires specialist support. The goal is for people to understand, question, maintain, change, or refuse the system—not depend indefinitely on a consultant."
+  }
+];
+---
+
+<BaseLayout
+  title="Consulting | Disabled by Design"
+  description="L. June Bloch helps justice-oriented organizations reframe consequential technology tasks, design accountable AI and data systems, and build collective capacity."
+>
+  <header class="page-header consulting-hero" aria-labelledby="consulting-title">
+    <p class="brand-title">Disabled <span class="brand-by">by</span> Design</p>
+    <h1 id="consulting-title">Consulting</h1>
+    <p class="subtitle">Critical strategy for integrated technological and social systems</p>
+    <p class="hero-lead">I help mission-driven organizations develop technological capacity aligned with their values. Systems should answer to the people who live with their consequences.</p>
+  </header>
+
+  <section class="services" aria-labelledby="services-title">
+    <h2 id="services-title">Consulting services</h2>
+    <div class="service-list">
+      {services.map((service) => (
+        <details id={service.id}>
+          <summary>
+            <span class="service-category">{service.name}</span>
+            <span class="service-action">{service.action}</span>
+          </summary>
+          <div class="disclosure-body">
+            <p>{service.body}</p>
+            {'additionalParagraph' in service && <p>{service.additionalParagraph}</p>}
+          </div>
+        </details>
+      ))}
+    </div>
+  </section>
+
+  <section class="approach" aria-labelledby="approach-title">
+    <h2 id="approach-title">My approach</h2>
+    <p class="practice-explanation">Technology is never just hardware and software. Categories, data, permissions, staff practices, informal workarounds, institutional histories, and unequal consequences form social and technical systems. My training in anthropology and Ethnic Studies helps me see how these systems work in practice—especially where the official account leaves out the people and knowledge already carrying the work. That inquiry transforms the problem so we don't automate bad systems poorly. I carry this approach into workflow, governance, software, research, and teaching, then use what the build reveals to revise the analysis again.</p>
+    <div class="process-navigator" data-process style={`--phase-count: ${process.length}`}>
+      <div class="process-overview">
+        <div class="process-rail">
+          <p class="feedback-label">Qualitative audit and new evidence can change any earlier step—including the principle or the decision to build.</p>
+          <ol class="process-nav" aria-label="Explore the five connected moves" hidden>
+            {process.map((phase, index) => (
+              <li>
+                <button type="button" aria-pressed={index === 0 ? 'true' : 'false'} aria-controls={`phase-${index}`} data-phase={index}>
+                  <span class="phase-node" aria-hidden="true"></span>
+                  <span class="phase-label">{phase.label}</span>
+                </button>
+              </li>
+            ))}
+          </ol>
+          <svg class="process-route" aria-hidden="true">
+            <defs>
+              <marker id="process-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="12" markerHeight="12" markerUnits="userSpaceOnUse" orient="auto">
+                <path d="M 1 1 L 9 5 L 1 9" fill="none" stroke="currentColor" stroke-width="1.5" />
+              </marker>
+            </defs>
+            <g data-route fill="none" stroke="currentColor" stroke-width="1.5"></g>
+          </svg>
+        </div>
+      </div>
+      <div class="process-panels" role="region" aria-label="Process details" aria-live="polite">
+        {process.map((phase, index) => (
+          <div class="phase-detail" id={`phase-${index}`} data-detail={index}>
+            <h3>{phase.title}</h3>
+            <p>{phase.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+
+  <section id="contact" class="contact" aria-labelledby="contact-title">
+    <h2 id="contact-title">Contact</h2>
+    <p>You do not need to translate your situation into a consulting service before writing. Tell me about the people, knowledge, tensions, or system your organization is trying to navigate—and what feels difficult to name or change. I bring my background as a qualitative researcher and teacher to help you articulate what you need before deciding together whether it calls for research, strategy, facilitation, governance, a technical build, or something different.</p>
+    <a class="button email-button" href="mailto:june@ljunebloch.com">june@ljunebloch.com</a>
+    <aside class="scope-note" aria-labelledby="scope-title">
+      <h3 id="scope-title">Scope and limits</h3>
+      <p>I can research compliance requirements and help translate them into operational questions, controls, and documentation. I do not provide legal opinions, certify regulatory compliance or cybersecurity, or certify a system as unbiased. I stay with what the evidence can support and revise the design when it cannot support the original frame.</p>
+    </aside>
+  </section>
+</BaseLayout>
+
+<script>
+  const navigator = document.querySelector<HTMLElement>('[data-process]');
+  if (navigator) {
+    const buttons = [...navigator.querySelectorAll<HTMLButtonElement>('[data-phase]')];
+    const panels = [...navigator.querySelectorAll<HTMLElement>('[data-detail]')];
+    const rail = navigator.querySelector<HTMLElement>('.process-rail')!;
+    const svg = navigator.querySelector<SVGSVGElement>('.process-route')!;
+    const route = svg.querySelector<SVGGElement>('[data-route]')!;
+    const feedback = navigator.querySelector<HTMLElement>('.feedback-label')!;
+    const select = (index: number) => {
+      panels.forEach((panel, position) => {
+        panel.setAttribute('aria-hidden', String(position !== index));
+      });
+      buttons.forEach((button, position) => button.setAttribute('aria-pressed', String(position === index)));
+    };
+    const draw = () => {
+      const bounds = rail.getBoundingClientRect();
+      const nodes = buttons.map((button) => {
+        const node = button.querySelector('.phase-node')!.getBoundingClientRect();
+        return { x: node.x - bounds.x + node.width / 2, y: node.y - bounds.y + node.height / 2 };
+      });
+      const first = nodes[0], last = nodes[nodes.length - 1];
+      const horizontal = Math.abs(last.x - first.x) > Math.abs(last.y - first.y);
+      svg.setAttribute('viewBox', `0 0 ${bounds.width} ${bounds.height}`);
+      route.replaceChildren();
+      const path = (d: string, arrow = false) => {
+        const element = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+        element.setAttribute('d', d);
+        if (arrow) element.setAttribute('marker-end', 'url(#process-arrow)');
+        route.append(element);
+      };
+      path(`M ${first.x} ${first.y} L ${last.x} ${last.y}`);
+      nodes.slice(0, -1).forEach((node, index) => {
+        const next = nodes[index + 1];
+        path(`M ${node.x} ${node.y} L ${(node.x + next.x) / 2} ${(node.y + next.y) / 2}`, true);
+      });
+      const label = feedback.getBoundingClientRect();
+      const labelBox = { left: label.left - bounds.left, right: label.right - bounds.left, top: label.top - bounds.top, middle: label.top - bounds.top + label.height / 2 };
+      if (horizontal) {
+        path(`M ${last.x} ${last.y} V ${labelBox.middle + 8} Q ${last.x} ${labelBox.middle} ${last.x - 8} ${labelBox.middle} H ${labelBox.right}`);
+        path(`M ${labelBox.left} ${labelBox.middle} H ${first.x + 8} Q ${first.x} ${labelBox.middle} ${first.x} ${labelBox.middle + 8} V ${first.y - 8}`, true);
+      } else {
+        const left = Math.max(8, first.x - 28);
+        path(`M ${last.x} ${last.y} V ${labelBox.top - 2}`, true);
+        path(`M ${labelBox.left} ${labelBox.middle} H ${left + 8} Q ${left} ${labelBox.middle} ${left} ${labelBox.middle - 8} V ${first.y + 8} Q ${left} ${first.y} ${left + 8} ${first.y} H ${first.x - 8}`, true);
+        const middle = (first.y + labelBox.middle) / 2;
+        path(`M ${left} ${middle + 12} V ${middle - 12}`, true);
+      }
+    };
+    buttons.forEach((button, index) => button.addEventListener('click', () => select(index)));
+    select(0);
+    navigator.classList.add('enhanced');
+    navigator.querySelector('[hidden]')?.removeAttribute('hidden');
+    const observer = new ResizeObserver(draw);
+    observer.observe(rail);
+    observer.observe(feedback);
+    document.fonts.ready.then(draw);
+    draw();
+  }
+</script>
+
+<style>
+  .consulting-hero { border-bottom: 0; padding-bottom: 0; margin-bottom: 2.5rem; }
+  .consulting-hero .brand-title { margin-bottom: 0.5rem; }
+  .consulting-hero h1 { font-family: var(--font-body); color: var(--text-primary); font-size: clamp(1.125rem, 2.0833333vw, 1.875rem); font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; }
+  .consulting-hero .subtitle { color: var(--amber); font-size: 1.25rem; font-weight: 400; line-height: 1.5; margin-top: 1.25rem; }
+  .hero-lead { margin-top: 2rem; color: var(--text-secondary); font-size: var(--text-lg); }
+  section { scroll-margin-top: 6rem; }
+  .services {
+    display: grid;
+    grid-template-columns: minmax(11rem, 0.8fr) minmax(0, 2fr);
+    column-gap: 2.5rem;
+    align-items: start;
+    margin-inline: calc(-1 * var(--content-padding));
+    padding: 2.5rem var(--content-padding);
+    background:
+      radial-gradient(ellipse at 100% 0%, rgba(106, 154, 184, 0.04), transparent 60%),
+      radial-gradient(ellipse at 0% 100%, rgba(240, 168, 48, 0.035), transparent 65%),
+      var(--bg-void);
+  }
+  .services h2 { max-width: 10em; }
+  .service-list details:first-child { border-top: 0; }
+  .service-list details:first-child > summary { padding-top: 0; }
+  .service-list details:first-child > summary::after { top: 0; }
+  .services .disclosure-body { color: var(--text-primary); }
+  .practice-explanation, .contact > p { color: var(--text-secondary); }
+  .practice-explanation { margin-bottom: 2rem; }
+  details { border-top: 1px solid var(--border); scroll-margin-top: 6rem; }
+  summary { position: relative; padding: 1.25rem 2.75rem 1.25rem 0; cursor: pointer; list-style: none; font-size: var(--text-lg); line-height: 1.55; color: var(--text-primary); }
+  summary::-webkit-details-marker { display: none; }
+  summary::after { content: '+'; position: absolute; top: 1.25rem; right: 0.25rem; font-family: var(--font-mono); font-size: 1.5rem; line-height: 1.2; color: var(--amber); }
+  details[open] > summary::after { content: '−'; }
+  summary:hover { color: var(--amber); }
+  summary:focus-visible, .process-nav button:focus-visible { outline: 2px solid var(--amber); outline-offset: 4px; border-radius: 2px; }
+  .disclosure-body { padding: 0 2.75rem 1.5rem 0; color: var(--text-secondary); }
+  .disclosure-body p { margin: 0; }
+  .disclosure-body p + p { margin-top: var(--space-md); }
+  .service-category { display: block; color: var(--blue-bright); font-family: var(--font-mono); font-size: 1.125rem; line-height: 1.6; }
+  .service-action { display: block; color: var(--text-secondary); font-size: 1rem; margin-top: 0.5rem; }
+  .service-list summary:hover .service-category { color: var(--amber); }
+  .process-overview { display: none; }
+  .enhanced .process-overview { display: flex; flex-direction: column; }
+  .process-rail { position: relative; display: flex; flex-direction: column; padding-bottom: 0.5rem; }
+  .process-nav { position: relative; z-index: 1; display: grid; grid-template-columns: repeat(var(--phase-count), minmax(0, 1fr)); list-style: none; }
+  .process-nav li { position: relative; display: grid; min-width: 0; }
+  .process-nav button { position: relative; display: grid; grid-template-columns: minmax(0, 1fr); align-content: stretch; width: 100%; min-height: 8rem; padding: 4.15rem 0.3rem 0.5rem; border: 0; background: transparent; color: var(--text-secondary); font: 500 1rem/1.35 var(--font-body); cursor: pointer; text-align: center; vertical-align: top; }
+  .phase-label { display: block; max-inline-size: 12ch; margin-inline: auto; text-wrap: balance; }
+  .phase-node { position: absolute; top: 2.75rem; left: calc(50% - 0.375rem); width: 0.75rem; height: 0.75rem; border: 2px solid var(--blue); border-radius: 50%; background: var(--bg-void); }
+  .process-nav button[aria-pressed="true"] { color: var(--amber); text-decoration: underline; text-underline-offset: 0.3em; }
+  .process-nav button[aria-pressed="true"] .phase-node { background: var(--amber); border-color: var(--amber); }
+  .process-nav button:hover { color: var(--text-primary); }
+  .process-route { position: absolute; inset: 0; width: 100%; height: 100%; color: var(--blue); pointer-events: none; overflow: visible; }
+  .feedback-label { position: relative; z-index: 2; align-self: center; max-width: 70%; margin: 0; padding: 0.25rem 0.75rem; color: var(--blue); background: var(--bg-void); font-size: 1rem; line-height: 1.5; }
+  .enhanced .process-panels { display: block; margin-top: 1.25rem; padding: 1.25rem; border: 1px solid var(--border); border-radius: 6px; background: var(--bg-input); }
+  .phase-detail { margin-bottom: 1.5rem; }
+  .enhanced .phase-detail { margin: 0; }
+  .enhanced .phase-detail[aria-hidden="true"] { display: none; }
+  .phase-detail h3 { font-family: var(--font-mono); font-size: 1.125rem; font-weight: 400; line-height: 1.6; color: var(--blue-bright); overflow-wrap: anywhere; margin-bottom: 0.5rem; }
+  .phase-detail p { color: var(--text-secondary); margin: 0; }
+  .contact { padding-top: 2rem; border-top: 1px solid var(--border); }
+  .email-button { margin-top: 0.75rem; }
+  .scope-note { margin-top: 2.5rem; padding: 1.5rem; border: 1px solid var(--border); border-radius: 6px; background: var(--bg-input); }
+  .scope-note h3 { font-family: var(--font-body); font-size: var(--text-lg); margin-bottom: 0.75rem; }
+  .scope-note p { color: var(--text-secondary); margin: 0; }
+  @media (max-width: 899px) {
+    .services { display: block; padding-block: 2rem; }
+    .services h2 { max-width: none; margin-bottom: 1.5rem; }
+    .process-nav { display: block; }
+    .phase-label { max-inline-size: none; margin-inline: 0; }
+    .process-nav button { align-content: center; min-height: 3.5rem; padding: 0.35rem 0.5rem 0.35rem calc(15% + 1.15rem); text-align: left; }
+    .phase-node { top: calc(50% - 0.375rem); left: calc(15% - 0.375rem); }
+    .feedback-label { order: 1; align-self: flex-start; width: calc(100% - 2rem); max-width: none; margin: 0.75rem 0 0 2rem; }
+  }
+  @media (max-width: 600px) {
+    .service-category, .phase-detail h3 { font-size: 1rem; }
+    .disclosure-body { padding-right: 0; }
+    .scope-note, .enhanced .process-panels { padding: 1.25rem; }
+  }
+  @media print {
+    .services { background: none; }
+    .process-overview { display: none !important; }
+    .enhanced .process-panels { display: block; }
+    .enhanced .phase-detail[aria-hidden="true"] { display: block; }
+    .phase-detail { margin-bottom: 1rem !important; }
+    .scope-note { background: white; border-color: #aaa; }
+  }
+</style>

@@ -8,10 +8,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 >
   <div class="page-header">
     <h1>Contact</h1>
-    <p class="subtitle">For academic inquiries, speaking, collaboration, or just saying hello.</p>
+    <p class="subtitle">For consulting, academic inquiries, speaking, collaboration, or just saying hello.</p>
   </div>
 
   <div class="contact-content">
+    <div class="contact-channels">
     <p class="contact-email">
       <a href="mailto:june@ljunebloch.com">june@ljunebloch.com</a>
     </p>
@@ -34,28 +35,26 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <a href="https://www.linkedin.com/in/l-june-bloch-1897a329/">L. June Bloch</a>
       </li>
     </ul>
+    </div>
   </div>
 </BaseLayout>
 
 <style>
-  .contact-content {
-    max-width: 65ch;
-  }
+  .contact-content { max-width: 65ch; }
 
-  .contact-email {
-    margin-bottom: var(--space-xl);
-  }
+  .contact-channels { min-width: 0; }
+
+  .contact-email { margin-bottom: var(--space-lg); }
 
   .contact-email a {
     font-family: var(--font-mono);
-    font-size: var(--text-2xl);
+    font-size: clamp(1.25rem, 3vw, 2rem);
     color: var(--amber);
     font-weight: 400;
+    overflow-wrap: anywhere;
   }
 
-  .contact-email a:hover {
-    color: var(--amber-mid);
-  }
+  .contact-email a:hover { color: var(--amber-mid); }
 
   .contact-links {
     list-style: none;
@@ -66,43 +65,31 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
   .contact-links li {
     display: flex;
+    flex-wrap: wrap;
     align-items: baseline;
-    gap: var(--space-lg);
+    column-gap: var(--space-md);
+    row-gap: var(--space-xs);
     padding-bottom: var(--space-md);
     border-bottom: 1px solid var(--border);
   }
 
-  .contact-links li:last-child {
-    border-bottom: none;
-  }
+  .contact-links li:last-child { border-bottom: none; }
 
   .link-label {
+    flex: 0 0 9rem;
     font-family: var(--font-body);
     font-size: var(--text-sm);
     font-weight: 500;
     color: var(--text-muted);
     text-transform: uppercase;
     letter-spacing: 0.08em;
-    min-width: 10rem;
-    flex-shrink: 0;
   }
 
   .contact-links a {
+    flex: 1 1 15rem;
+    min-width: 0;
     font-size: var(--text-base);
+    overflow-wrap: anywhere;
   }
 
-  @media (max-width: 480px) {
-    .contact-email a {
-      font-size: var(--text-xl);
-    }
-
-    .contact-links li {
-      flex-direction: column;
-      gap: var(--space-xs);
-    }
-
-    .link-label {
-      min-width: auto;
-    }
-  }
 </style>

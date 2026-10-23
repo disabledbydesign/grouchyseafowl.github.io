@@ -57,18 +57,18 @@ Drawn from the Autograder4Canvas design system, adapted for web readability.
 
 Three typefaces, each serving a role:
 
-### Fraunces (Display/Headings)
-- Variable serif with optical sizing
+### DM Serif Display (Display/Headings)
+- Characterful display serif
 - Warm, characterful, scholarly without being stuffy
 - Used for: page titles, section headings, the name on the home page
-- Weights: 400 (regular), 600 (semibold), 900 (black for the name)
-- Google Fonts: `Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,900`
+- Available weight: 400; keep the actual loaded typeface
+- Google Fonts: `DM+Serif+Display:ital@0;1`
 
 ### DM Sans (Body)
 - Clean geometric sans-serif
 - Excellent readability at body sizes
 - Used for: paragraphs, descriptions, nav links, metadata
-- Weights: 400, 500, 600
+- Weights: 400, 500, 600, 700
 - Google Fonts: `DM+Sans:wght@400;500;600`
 
 ### JetBrains Mono (Code/Technical)
@@ -121,7 +121,7 @@ Three typefaces, each serving a role:
 ## Page Structure
 
 ### Home
-- Hero: Name (Fraunces, large), identity statement, headshot (circle crop)
+- Hero: Name (DM Serif Display, large), identity statement, headshot (circle crop)
 - Brief intro paragraph
 - 3 feature cards linking to Research, Projects, Publications
 - Warm, inviting, not overwhelming
@@ -180,9 +180,18 @@ Three typefaces, each serving a role:
 - External links: --blue, with subtle external-link indicator
 - Focus: 2px solid --amber outline with 2px offset
 
+### Brand headings and link decoration
+- About and Consulting share regular DM Serif Display in rose-hot uniformly, including “by.” The current site uses 64px desktop brand type; Consulting uses loaded DM Sans 700 at 30px with tracked uppercase. Smaller screens scale responsively, with an 18px Consulting minimum for readability.
+- Do not add decorative arrows to links. Functional process arrows and email envelope icons remain.
+
+### Consulting copy and accents
+- Preserve the exact author-tuned copy in the Consulting IP framework and portfolio page strategy. Current user feedback controls layout.
+- Do not use pink vertical accent bars.
+- Shared `.button` action links use the existing dark fill, amber outline and 6px corners, with a 44px minimum target and visible focus.
+
 ### Subtle Effects
 - Cards get a very subtle radial gradient (echoing Autograder phosphor bloom)
-- Hero section: faint radial gradient from center, amber-tinted
+- Page body: restrained amber and steel-blue radial gradients fade across the viewport, with no content-edge clipping
 - No heavy animations — respect reduced-motion universally
 - Noise/grain texture overlay at <5% opacity for warmth (optional, test first)
 

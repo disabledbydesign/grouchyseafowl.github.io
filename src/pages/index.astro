@@ -15,6 +15,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         teacher. The publications develop the theory; the software experiments with
         what happens when you try to put pieces of it into prompt-time scaffolding.
       </p>
+      <p class="hero-practice">
+        I bring the same practice across scholarship, software, and consulting: studying how
+        institutions and technologies make some knowledge legible and push other knowledge toward
+        the margins, then building to see what a different architecture makes possible.
+        <a href="/consulting/">Explore consulting</a>
+      </p>
       <div class="hero-socials">
         <a href="https://scholar.google.com/citations?user=9bQ8kjIAAAAJ&hl=en&oi=ao" aria-label="Google Scholar">Scholar</a>
         <a href="https://bsky.app/profile/disabledbydesign.bsky.social" aria-label="Bluesky">Bluesky</a>
@@ -58,11 +64,18 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 </BaseLayout>
 
 <style>
-  .hero-anchor {
-    font-family: var(--font-body);
-    font-size: var(--text-base);
-    color: var(--text-muted);
-    font-style: italic;
-    margin-bottom: var(--space-lg);
+  .hero-practice {
+    max-width: 43rem;
+    margin-top: var(--space-lg);
+    padding: var(--space-md) 0 var(--space-md) var(--space-lg);
+    border-left: 2px solid var(--amber-dim);
+    color: var(--text-secondary);
+    line-height: 1.75;
+  }
+
+  .hero-practice a {
+    display: inline-block;
+    margin-top: var(--space-sm);
+    font-weight: 600;
   }
 </style>

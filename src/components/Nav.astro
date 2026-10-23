@@ -1,8 +1,8 @@
 ---
 const currentPath = Astro.url.pathname;
 const navLinks = [
-  { href: '/', label: 'Home' },
   { href: '/about/', label: 'About' },
+  { href: '/consulting/', label: 'Consulting' },
   { href: '/research/', label: 'Research' },
   { href: '/publications/', label: 'Publications' },
   { href: '/projects/', label: 'Software' },
@@ -49,10 +49,9 @@ const navLinks = [
     position: sticky;
     top: 0;
     z-index: 100;
+    overflow-x: clip;
     background: var(--bg-void);
     border-bottom: 1px solid var(--border);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
   }
 
   .nav-inner {
@@ -157,6 +156,10 @@ const navLinks = [
       right: 0;
       bottom: 0;
       flex-direction: column;
+      overflow-y: auto;
+      overscroll-behavior: contain;
+      visibility: hidden;
+      pointer-events: none;
       background: var(--bg-void);
       padding: var(--space-xl) var(--content-padding);
       gap: var(--space-md);
@@ -166,6 +169,8 @@ const navLinks = [
     }
 
     .nav-links.open {
+      visibility: visible;
+      pointer-events: auto;
       transform: translateX(0);
     }
 
@@ -184,6 +189,14 @@ const navLinks = [
     const expanded = toggle.getAttribute('aria-expanded') === 'true';
     toggle.setAttribute('aria-expanded', String(!expanded));
     menu?.classList.toggle('open');
+  });
+
+  const navigation = toggle?.closest('nav');
+  navigation?.addEventListener('focusout', (event) => {
+    if (menu?.classList.contains('open') && !navigation.contains(event.relatedTarget as Node | null)) {
+      toggle?.setAttribute('aria-expanded', 'false');
+      menu.classList.remove('open');
+    }
   });
 
   // Close menu on escape
