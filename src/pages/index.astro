@@ -5,7 +5,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 <BaseLayout title="Home">
   <section class="hero">
     <div class="hero-text">
-      <h1 class="hero-name">L. June Bloch</h1>
+      <h1 class="hero-name">L. June Bloch<span class="hero-credential">, PhD</span></h1>
       <p class="hero-identity">Anthropologist · Ethnic Studies · Builder</p>
       <p class="hero-intro">
         I write about how systems produce violence, and I build small tools that try
@@ -68,6 +68,15 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 </BaseLayout>
 
 <style>
+  .hero-credential {
+    margin-left: var(--space-xs);
+    color: var(--text-secondary);
+    font-family: var(--font-display);
+    font-size: 0.5em;
+    font-weight: 400;
+    white-space: nowrap;
+  }
+
   .feature-link-consulting { grid-column: 1 / -1; }
   .feature-link-consulting p { max-width: 70ch; }
 
